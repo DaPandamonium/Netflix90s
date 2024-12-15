@@ -1,18 +1,19 @@
 window.addEventListener('load', function () {
     const loadingScreen = document.getElementById('loading-screen');
-    
-    const loadingSound = new Audio('./assets/retroscifiPC.mp3'); 
-    
+    const loadingSound = new Audio('./assets/retroscifiPC.mp3');
+
     if (loadingScreen) {
-        loadingSound.play().catch((error) => {
+        loadingSound.play().then(() => {
+            console.log("Loading sound is playing!");
+        }).catch((error) => {
             console.error("Error playing loading sound:", error);
         });
-        
+
         setTimeout(() => {
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 1000);
+            }, 1000); 
         }, 4000);
     }
 });
