@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90s Era Netflix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <img src="./assets/vhsicon.png" alt="Loading...">
+        <p>Loading database...</p>
+        <p>⚙️ System Requirements</p>
+        <p>Internet Explorer 5.0</p>
+        <p>800x600 resolution</p>
+        <p>16-bit color display</p>
+    </div>
+
+    <header class="retro-header">
+        <h1 class="neon-text">Netflix</h1>
+        <img src="./assets/logovhs.png" alt="Netflix Logo VHS" class="VHS-logo">
+        <div class="header-line"></div>
+        <marquee class="header-marquee" scrollamount="3" behavior="scroll">
+            💿 Welcome to Netflix DVD-by-Mail! 📬 Free shipping both ways! ⭐ New releases added weekly! 💿 Join now and get 3 DVDs at once! 📬 No late fees ever!
+        </marquee>
+        <div class="header-line"></div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <li><a href="#main" class="genre-button" style="width: 40%;">Home</a></li>
+
+            <h3 class="sidebar-title">🎬 Browse Genres</h3>
+            <ul class="genre-list">
+                <li><a href="#action" class="genre-button">Action</a></li>
+                <li><a href="#comedy" class="genre-button">Comedy</a></li>
+                <li><a href="#drama" class="genre-button">Drama</a></li>
+                <li><a href="#horror" class="genre-button">Horror</a></li>
+                <li><a href="#family" class="genre-button">Family</a></li>
+            </ul>
+
+            <div class="visitor-section">
+                <img src="./assets/counter.gif" alt="Hit Counter" class="counter-image" width="20%" height="20%">
+                <p class="visitor-text">You are visitor<br>#<span id="visitor-count" class="blink">0</span>!</p>
+            </div>
+
+            <div class="fire-container">
+                <span class="fire-text">Best Site 1997</span>
+            </div>
+            
+
+            <div class="chat-room">
+                <div class="chat-title">💬 DVD CHAT ROOM</div>
+                <div class="chat-window">
+                    <div class="chat-messages">
+                        <p class="chat-message"><span class="username">MovieBuff99:</span> anyone seen Matrix?</p>
+                        <p class="chat-message"><span class="username">DVDKing:</span> its awesome!</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" placeholder="Enter chat..." maxlength="50">
+                    <button class="chat-send">Send</button>
+                </div>
+            </div>
+            
+
+            <div class="profile-section">
+                <div id="login-form" class="login-form">
+                    <h3>🎬 Member Login</h3>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button id="loginButton">Login</button>
+                    <p class="demo-text">Demo: user/pass</p>
+                </div>
+                
+                <div id="profile-info" class="profile-info" style="display: none;">
+                    <h3>👤 Welcome back!</h3>
+                    <p id="profile-name"></p>
+                    <div class="queue-info">
+                        <h4>📀 My Queue (<span id="queue-count">0</span>)</h4>
+                        <div id="movie-queue" class="movie-queue">
+                            <!-- Queue items -->
+                        </div>
+                    </div>
+                    <button id="logoutButton">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="header-container">
+                <h1>🔥 New Arrivals!</h1>
+            </div>
+            
+            <div class="movie-grid main-movies" style="display: grid;">
+                <div class="movie">
+                    <img src="./assets/matrix.png" alt="The Matrix">
+                    <p><strong>The Matrix</strong></p>
+                    <p class="description">A mind-bending sci-fi adventure.</p>
+                    <button class="add-to-queue">Add to Queue</button>
+                </div>
+                <!-- <div class="movie no-dvd">
+                    <p><strong>Special Movie</strong></p>
+                    <p class="description">A unique movie without the DVD icon.</p>
+                    <button class="add-to-queue">Add to Queue</button>
+                </div> -->
+                <div class="movie no-dvd">
+                    <img src="./assets/fightclub.png" alt="Fight Club">
+                    <p><strong>Fight Club</strong></p>
+                    <p class="description">A dark and gritty drama.</p>
+                    <button class="add-to-queue">Add to Queue</button>
+                </div>
+                <div class="movie">
+                    <img src="./assets/pulpfiction.jpg" alt="Pulp Fiction">
+                    <p><strong>Pulp Fiction</strong></p>
+                    <p class="description">An independent crime film.</p>
+                    <button class="add-to-queue">Add to Queue</button>
+                </div>
+            </div>
+
+            <!-- Action Movies -->
+            <div class="movie-grid action-movies" id="action" style="display: none;">
+
+            </div>
+
+            <!-- Comedy Movies -->
+            <div class="movie-grid comedy-movies" id="comedy" style="display: none;">
+            </div>
+
+            <!-- Drama Movies -->
+            <div class="movie-grid drama-movies" id="drama" style="display: none;">
+
+            </div>
+
+            <!-- Horror Movies -->
+            <div class="movie-grid horror-movies" id="horror" style="display: none;">
+            </div>
+
+            <!-- Family Movies -->
+            <div class="movie-grid family-movies" id="family" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-sections">
+        <div class="membership-section">
+            <h2>📀 Join Our Gold Star Membership!</h2>
+            <form class="signup-form">
+                <input type="email" class="signup-email" placeholder="Enter your email" required>
+                <button type="submit" class="signup-button">Sign Up Now</button>
+            </form>
+            <ul class="benefits">
+                <li>3 DVDs at a time or 2 VHS - No late fees!</li>
+                <li>Free shipping both ways.</li>
+                <li>Exclusive access to new releases.</li>
+            </ul>
+        </div>
+
+        <div class="center-container">
+    <div class="gif-sequence">
+        <img src="./assets/ads1.gif" alt="Ad 1" class="gif gif1">
+        <img src="./assets/ads2.gif" alt="Ad 2" class="gif gif2">
+        <img src="./assets/ads3.gif" alt="Ad 3" class="gif gif3">
+    </div>
+</div>
+       
+
+        <div class="trivia">
+            <h2>🎥 Movie Trivia</h2>
+            <p>Did you know? "The Matrix" popularized the use of "bullet time" in action scenes!</p>
+            <marquee>Check out more trivia on your favorite movies! <span style="color: yellow;">Try typing something... 👀</span></marquee>
+        </div>
+
+        
+        <div class="guestbook-container">
+            <div class="guestbook">
+                <div class="terminal-header">
+                    TERMINAL: /home/netflix/guestbook >
+                </div>
+                <div class="guestbook-entries">
+                    <!-- Entries -->
+                </div>
+            </div>
+            
+            <div class="guestbook-form">
+                <h2>📓 Sign Guestbook</h2>
+                <form id="guestbook-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Sign Guestbook</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="system-requirements">
+            <h3>⚙️ System Requirements</h3>
+            <ul>
+                <li>Internet Explorer 5.0</li>
+                <li>800x600 resolution</li>
+                <li>16-bit color display</li>
+            </ul>
+            <div class="browser-badges">
+                <img src="./assets/ie.gif" alt="Internet Explorer">
+            </div>
+        </div>
+        
+
+        <footer>
+            <p>© 1997 Netflix Codedex Hackathon By <a href="https://www.codedex.io/@DaPanda" target="_blank" style="color: #FF0000; text-decoration: none;">
+                DaPanda</a>. All rights reserved.</p>
+            <div class="visitor-counter">Visitor Count: <span id="visitor-counter">24</span></div>
+        </footer>
+    </div>
+    <div id="alert-container" class="alert-container"></div>
+
+    <script src="movie.js"></script>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="sounds.js"></script>
+    
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span id="closeSignup" class="close">&times;</span>
+            <h2>🌟 Welcome to Gold Star Membership! 🌟</h2>
+            <p>Please confirm your signup details:</p>
+            <input type="text" id="signupName" placeholder="Your Name" required>
+            <button id="confirmSignup">Start My DVD Adventure!</button>
+        </div>
+    </div>
+
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chatbot-icon" class="chatbot-icon">💬</div>
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <span>90s Chatbot</span>
+                <button id="chatbot-close" class="chatbot-close">X</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <p class="chat-message"><span class="bot">Bot:</span> Hey there! Welcome to the chatroom! ASL?</p>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type a message..." maxlength="50">
+                <button id="chatbot-send" class="chatbot-send">Send</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
